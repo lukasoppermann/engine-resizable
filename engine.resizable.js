@@ -14,7 +14,7 @@
 		};
 	}
 	// export module
-	define(["engine/engine", "engine/functions/each","dev/engine/functions/on","engine/functions/off","engine/functions/css","engine/functions/parents","engine/functions/replaceclass"], function(_){
+	define(["engine/engine", "engine/functions/each","dev/engine/functions/on","engine/functions/off","engine/functions/css","engine/functions/parent","engine/functions/class"], function(_){
 		// serializer
 		_.fn.resizable = function( opts ){
 			// defaults
@@ -72,7 +72,7 @@
 				// add click-event
 				_(opts.handle, container).on("mousedown", function(e)
 				{
-					var item = _(this).parents(container.getAttribute('data-resizeItems'));
+					var item = _(this).parent(container.getAttribute('data-resizeItems'));
 					// store original values
 					var original = {
 						x: e.clientX,
